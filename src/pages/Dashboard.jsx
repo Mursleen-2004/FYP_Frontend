@@ -1,20 +1,27 @@
-import React from "react";
-import Sidebar from "../components/Dashboard/Sidebar";
-import Welcome from "../components/Dashboard/Welcome";
-import RealTimeTrends from "../components/Dashboard/RealTimeTrends";
+import DashboardLayout from "../components/Dashboard/DashboardLayout";
+import WelcomeBanner from "../components/Dashboard/Welcome";
+import GeneratedPosts from "../components/Dashboard/GeneratedPosts";
 import Analytics from "../components/Dashboard/Analytics";
+import SavedPosts from "../components/Dashboard/SavedPosts";
+import Suggestions from "../components/Dashboard/Suggestions";
+import UserPlan from "../components/Dashboard/UserPlan";
+import { useSelector } from "react-redux";
 
-const Dashboard = () => {
+const DashboardPage = () => {
+   
+    const { user } = useSelector((state) => state.user); 
+    const userName = user?.name || "Guest";
+
   return (
-    <div className="flex min-h-screen bg-[#0f172a] text-white">
-      <Sidebar />
-      <main className="flex-1 p-8 overflow-auto space-y-5">
-        <Welcome />
-        <RealTimeTrends />
-        <Analytics/>
-      </main>
-    </div>
+    <DashboardLayout>
+      <WelcomeBanner name={userName} />
+      <GeneratedPosts posts={[{ topic: "AI in Healthcare", tone: "Professional", preview: "AI is transforming...", date: "Today" }]} />
+      <Analytics />
+      <SavedPosts posts={[{ content: "Here’s why AI matters...", date: "Yesterday" }]} />
+      <Suggestions />
+      <UserPlan plan="Free" credits={3} />
+    </DashboardLayout>
   );
 };
 
-export default Dashboard;
+export default DashboardPage;

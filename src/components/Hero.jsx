@@ -1,13 +1,17 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 const Hero = () => {
+  
+   const navigate = useNavigate()
+  
   return (
     <section className="relative w-full h-screen overflow-hidden">
       {/* Background Video */}
       <video
         className="absolute top-0 left-0 w-full  h-full object-cover "
-        src="bg-video1.mp4"
+        src="bg_video1.mp4"
         autoPlay
         muted
         loop
@@ -16,7 +20,7 @@ const Hero = () => {
      
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-opacity-20 backdrop-blur z-10"></div>
+      <div className="absolute inset-0 bg-opacity-40 backdrop-blur  z-10"></div>
 
       {/* Content */}
       <motion.div
@@ -32,7 +36,7 @@ const Hero = () => {
           Empower your creativity with AI. Content Genius transforms ideas into stunning results effortlessly.
         </p>
         <div className="mt-8">
-          <button className="bg-gradient-to-r  from-violet-600 cursor-pointer to-pink-400 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition duration-200">
+          <button onClick={ ()=>navigate('/trending') }  className="bg-[#F49867] hover:bg-white hover:text-black hover:font-extrabold cursor-pointer text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-all duration-400">
             Try Content Genius
           </button>
         </div>

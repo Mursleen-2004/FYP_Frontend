@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-slate-200 px-6 py-12 font-poppins">
+    <footer className="bg-[#031B34] text-slate-200 px-6 py-12 font-poppins">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
         {/* Logo & About */}

@@ -1,1 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import "tailwindcss";
+
+* {
+  font-family: Inter;
+}
+
+#Auth {
+  background: linear-gradient(
+    -45deg,
+    #ee7752,
+    #e73c7e,
+    #b423d5,
+    #23a6d5,
+    #23d5ab
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.stars {
+  background: #000 url("/assets/backgrounds/stars-color.png") repeat;
+  background-size: cover;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  animation: moveStars 200s linear infinite;
+}
+.nebula {
+  background: url("/assets/backgrounds/nebula-overlay.png") no-repeat center
+    center;
+  background-size: cover;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  mix-blend-mode: screen;
+  opacity: 0.3;
+  filter: blur(20px) brightness(1.4) saturate(1.2);
+  animation: floatNebula 40s ease-in-out infinite alternate;
+}
+
+@keyframes floatNebula {
+  0% {
+    transform: scale(1) translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.05) translate(-20px, -10px) rotate(1deg);
+  }
+}
+
+.shooting-star {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+.shooting-star::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: 70%;
+  width: 2px;
+  height: 80px;
+  background: linear-gradient(-45deg, #fff, transparent);
+  opacity: 0.7;
+  transform: rotate(45deg);
+  animation: shooting 6s ease-in-out infinite;
+}
+
+.moon {
+  background: url("/assets/backgrounds/moon.png") no-repeat center;
+  background-size: 120px 120px;
+  position: absolute;
+  bottom: 40px;
+  right: 80px;
+  width: 170px;
+  height: 120px;
+  z-index: 4;
+  animation: floatMoon 10s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+@keyframes moveStars {
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+@keyframes shooting {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-800px, 800px) rotate(45deg);
+    opacity: 0;
+  }
+}
+@keyframes floatMoon {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

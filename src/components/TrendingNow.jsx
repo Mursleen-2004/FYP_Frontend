@@ -52,7 +52,7 @@ const Trending = () => {
   const currentPosts = trends.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   return (
-    <section className="bg-gradient-to-tr from-purple-50 via-white to-purple-50 py-16 px-6 md:px-20">
+    <section className=" py-16 px-6 md:px-20">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-extrabold text-slate-900  mb-8 tracking-tight drop-shadow-md">
           Trending on Reddit

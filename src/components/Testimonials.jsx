@@ -31,7 +31,7 @@ const Testimonials = () => {
       className="max-w-7xl mx-auto px-6 py-20 w-full"
       style={{ maxWidth: "100vw", boxSizing: "border-box" }}
     >
-      <h3 className="text-3xl font-extrabold mb-12 text-center text-slate-900">
+      <h3 className="text-4xl font-extrabold mb-12 text-center text-white">
         What Our Users Say
       </h3>
       <div className="grid gap-10 sm:grid-cols-3">
@@ -49,26 +49,26 @@ const Testimonials = () => {
                 "0 20px 40px rgba(59, 130, 246, 0.4), 0 10px 20px rgba(37, 99, 235, 0.3)",
               transition: { duration: 0.4, ease: "easeOut" },
             }}
-            className="bg-gradient-to-br from-[#50d5b7]   
+            className="bg-gradient-to-br from-[#ffffff]   
 
-to-[#067d68]
+to-[#8d8d8f] 
 
  rounded-3xl p-6 cursor-pointer
-                       text-white shadow-lg transform-gpu perspective-1000
+                        shadow-lg transform-gpu perspective-1000
                        border border-transparent hover:border-blue-400 transition-all duration-400"
           >
-            <p className="mb-6 italic leading-relaxed drop-shadow-lg text-white/90">
+            <p className="mb-6 italic leading-relaxed drop-shadow-lg text-black">
               “{feedback}”
             </p>
             <div className="flex items-center">
               <img
                 src={photo}
                 alt={name}
-                className="w-14 h-14 rounded-full mr-4 object-cover border-2 border-white shadow-md"
+                className="w-14 h-14 rounded-full mr-4 object-cover border-2 border-black shadow-md"
               />
               <div>
-                <p className="font-semibold text-white drop-shadow">{name}</p>
-                <p className="text-sm text-white/80">{role}</p>
+                <p className="font-semibold text-black drop-shadow">{name}</p>
+                <p className="text-sm text-black">{role}</p>
               </div>
             </div>
           </motion.div>
