@@ -25,12 +25,12 @@ const Navbar = () => {
 
   const linkStyle = (path) =>
     location.pathname === path
-      ? "text-white font-semibold border-b-2 border-gray-300"
-      : "text-white hover:text-pink-400 hover:scale-105 transition-all duration-400";
+      ? "text-white font-semibold border-b-2 border-white"
+      : "text-white hover:text-[#dd6322] hover:scale-105 transition-all duration-400";
 
   const handleLinkClick = () => setIsOpen(false);
 
-  // ✅ Close dropdown when clicking outside
+  //  Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -130,8 +130,8 @@ const Navbar = () => {
             </div>
           ) : (
             <button
-              onClick={() => navigate("/signup")}
-              className="bg-[#F49867] text-white px-4 py-2 rounded-lg font-semibold hover:scale-105 transition duration-300"
+              onClick={() => navigate("/login")}
+              className="bg-[#F49867] cursor-pointer text-white px-4 py-2 rounded-lg font-semibold hover:scale-105 transition duration-300"
             >
               Sign In
             </button>

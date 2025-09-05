@@ -38,7 +38,7 @@ const techStack = [
   {
     name: "Node.js",
     image: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg",
-    desc: "Backend API services and routing with Node.js.",
+    desc: "Js Backend environment for Routing and Building APIs.",
     url: "https://nodejs.org/",
   },
   {
@@ -203,14 +203,14 @@ const Overview = () => {
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 250 }}
-                    className="cursor-pointer hover:bg-gradient-to-l from-[#AE67FA] to-[#F49867] hover:border-b-3 hover:border-[#ffdf77] p-6 rounded-2xl shadow-md hover:shadow-lg"
+                    className="cursor-pointer bg-[#0e2544]  hover:bg-gradient-to-br from-[#55152a] to-[#052150] hover:border-b-3 hover:border-[#ffdf77] p-6 rounded-2xl shadow-2xl hover:shadow-lg"
                   >
                     <img
                       src={tech.image}
                       alt={tech.name}
                       className="h-16 mx-auto mb-4 object-contain"
                     />
-                    <h4 className="text-xl font-semibold text-teal-400 text-center mb-2">
+                    <h4 className="text-xl font-semibold text-white text-center mb-2">
                       {tech.name}
                     </h4>
                     <p className="text-white text-sm text-center">

@@ -6,11 +6,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "../../redux/userSlice.js";
+import { Eye, EyeOff } from "lucide-react";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,7 +22,10 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:4000/api/auth/login", formData);
+      const response = await axios.post(
+        "http://localhost:4000/api/auth/login",
+        formData
+      );
 
       if (response.data.token) {
         toast.success("Logged in successfully!");
@@ -30,10 +35,12 @@ const Login = () => {
         localStorage.setItem("user", JSON.stringify(response.data.user));
 
         //  Dispatch both token + user to Redux
-        dispatch(loginSuccess({
-          token: response.data.token,
-          user: response.data.user,
-        }));
+        dispatch(
+          loginSuccess({
+            token: response.data.token,
+            user: response.data.user,
+          })
+        );
 
         // Redirect to /
         setTimeout(() => navigate("/"), 1500);
@@ -46,7 +53,10 @@ const Login = () => {
   };
 
   return (
-    <div id="Auth" className="min-h-screen flex items-center justify-center px-4">
+    <div
+      id="Auth"
+      className="min-h-screen flex items-center justify-center px-4"
+    >
       <ToastContainer position="top-right" />
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -66,19 +76,27 @@ const Login = () => {
             placeholder="Email"
             className="w-full px-4 py-3 rounded-lg bg-white/20 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#66fcf1] focus:bg-white/30 transition"
           />
-          <input
-            type="password"
-            name="password"
-            required
-            value={formData.password}
-            onChange={handleChange}
-            placeholder="Password"
-            className="w-full px-4 py-3 rounded-lg bg-white/20 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#66fcf1] focus:bg-white/30 transition"
-          />
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              required
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Password"
+              className="w-full px-4 py-3 pr-12 rounded-lg bg-white/20 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#66fcf1] focus:bg-white/30 transition"
+            />
+            <div
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white cursor-pointer"
+              onClick={() => setShowPassword((prev) => !prev)}
+            >
+              {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
+            </div>
+          </div>
 
           <button
             type="submit"
-            className="w-full bg-[#66fcf1] hover:bg-[#45a29e] text-[#0b0c10] font-semibold py-3 rounded-lg transition duration-300 shadow-md hover:shadow-xl"
+            className="w-full bg-[#66fcf1] cursor-pointer hover:bg-[#45a29e] text-[#0b0c10] font-semibold py-3 rounded-lg transition duration-300 shadow-md hover:shadow-xl"
           >
             Log In
           </button>
@@ -86,7 +104,10 @@ const Login = () => {
 
         <p className="mt-6 text-center text-sm text-gray-300">
           Don't have an account?{" "}
-          <Link to="/signup" className="text-[#66fcf1] hover:text-white underline">
+          <Link
+            to="/signup"
+            className="text-[#66fcf1] hover:text-white underline"
+          >
             Sign Up
           </Link>
         </p>

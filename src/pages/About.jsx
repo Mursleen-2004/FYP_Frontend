@@ -8,7 +8,7 @@ import Navbar from '../components/Navbar'
 const About = () => {
   return (
     <motion.div
-      className="pt-20 px-4 bg-gradient-to-b from-[#040C18] to-[#031B34] min-h-screen"
+      className="pt-20 px-4 bg-gradient-to-b from-[#09203F] to-[#031d33] min-h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}

@@ -7,16 +7,11 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import pakistanFlag from "../assets/pakistan-flag.png";
 import copy from "../assets/copy.png";
+import twitter from "../assets/twitter.png";
 
 // Platform icons
 const platformIcons = {
-  twitter: (
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/3670/3670151.png"
-      alt="X"
-      className="w-7 h-7"
-    />
-  ),
+  twitter: <img src={twitter} alt="X" className="w-7 h-7" />,
   youtube: (
     <img
       src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
@@ -53,11 +48,11 @@ const Section = ({ icon, title, trends }) => {
       initial={{ opacity: 0, y: 50, rotateX: 90 }}
       animate={{ opacity: 1, y: 0, rotateX: 0 }}
       transition={{ duration: 0.8, type: "spring" }}
-      className="bg-gradient-to-bl from-[#006663] to-[#11111] hover:scale-105 transition-all duration-400 rounded-2xl p-6 shadow-[0_10px_25px_rgba(102,252,241,0.1)] hover:shadow-[0_15px_30px_rgba(102,252,241,0.2)] w-full"
+      className="bg-gradient-to-br from-[#247B9F] to-[#022433] hover:scale-105 transition-all duration-400 rounded-2xl p-6 shadow-[0_10px_25px_rgba(102,252,241,0.1)] hover:shadow-[0_15px_30px_rgba(102,252,241,0.2)] w-full"
     >
       <div className="flex items-center gap-3 mb-4">
         {icon}
-        <h2 className="text-xl font-bold text-[#66fcf1]">{title}</h2>
+        <h2 className="text-xl font-bold text-white">{title}</h2>
       </div>
 
       <ul className="list-decimal pl-6 text-[#c5c6c7] space-y-2">
@@ -125,7 +120,7 @@ const TrendingPage = () => {
 
         setTrends(data);
       } catch (error) {
-        console.error("❌ Error fetching trends:", error);
+        console.error("Error fetching trends:", error);
       } finally {
         setLoading(false);
       }
@@ -158,7 +153,7 @@ const TrendingPage = () => {
               }
               title={
                 platform === "twitter"
-                  ? "X (Twitter)"
+                  ? "X"
                   : platform.charAt(0).toUpperCase() + platform.slice(1)
               }
               trends={trends[platform]}

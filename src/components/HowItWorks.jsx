@@ -90,7 +90,7 @@ export default function HowItWorks() {
 
               {/* Mobile vertical arrow */}
               {i < steps.length - 1 && (
-                <div className="md:hidden my-4 text-[#66fcf1] text-3xl">↓</div>
+                <div className="md:hidden my-4 text-[#F49867] text-3xl">↓</div>
               )}
             </div>
           ))}

@@ -21,11 +21,11 @@ const team = [
     github: "https://github.com/Miraj",
   },
   {
-    name: "Hasnain Naseem",
+    name: "Husnain Naseem",
     role: "Database Administrator",
     photo: DB_Admin,
-    linkedin: "https://linkedin.com/in/alirehman",
-    github: "https://github.com/alirehman",
+    linkedin: "https://www.linkedin.com/in/husnain-naseem-561a142ab/",
+    github: "https://github.com/Husnain",
   },
 ];
 
@@ -51,8 +51,8 @@ const Team = () => {
   return (
     <section className="w-full min-h-screen py-20 px-6 text-white overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl font-extrabold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-pink-500 drop-shadow-[0_0_20px_rgba(255,0,255,0.3)]">
-          Meet the Team Behind <span className="text-white">Content Genius</span>
+        <h2 className="text-5xl font-extrabold text-center mb-16 bg-clip-text  ">
+          Team
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
@@ -62,7 +62,7 @@ const Team = () => {
               variants={cardVariants}
               initial="initial"
               whileHover="hover"
-              className="relative bg-gradient-to-br from-[#00C1D0] to-[#0A0F44] cursor-pointer border-2 border-[#393964] p-6 rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:shadow-[0_10px_60px_rgba(102,252,241,0.4)] transition-all duration-300 group overflow-hidden backdrop-blur-lg"
+              className="relative bg-gradient-to-br from-[#036f77] to-[#070b36] cursor-pointer border-2 border-[#393964] p-6 rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.35)] hover:shadow-[0_10px_60px_rgba(102,252,241,0.4)] transition-all duration-300 group overflow-hidden backdrop-blur-lg"
               style={{ perspective: "1000px", transformStyle: "preserve-3d" }}
             >
               {/* Gradient glow ring */}

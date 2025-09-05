@@ -9,12 +9,12 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#031B34] text-slate-200 px-6 py-12 font-poppins">
+    <footer className=" text-slate-200 px-6 py-12 font-poppins">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
         {/* Logo & About */}
         <div>
-          <h2 className="text-3xl font-extrabold text-cyan-400 drop-shadow-md mb-3">
+          <h2 className="text-4xl font-extrabold bg-gradient-to-l from-[#AE67FA] to-[#F49867] bg-clip-text text-transparent drop-shadow-md mb-3">
             Content Genius
           </h2>
           <p className="text-sm text-slate-400 leading-relaxed">
@@ -31,7 +31,6 @@ const Footer = () => {
               { name: "About Us", to: "/about" },
               { name: "Trending", to: "/trending" },
               { name: "Contact", to: "/contact" },
-              { name: "Privacy Policy", to: "/privacy" },
             ].map((link, idx) => (
               <li key={idx}>
                 <Link
@@ -71,9 +70,7 @@ const Footer = () => {
         {/* Contact Info */}
         <div>
           <h3 className="text-lg font-semibold text-cyan-300 mb-4">Contact</h3>
-          <p className="text-sm">📧 support@contentgenius.com</p>
-          <p className="text-sm">📞 +1 (234) 567-890</p>
-          <p className="text-sm">🏙️ Genius Lane, Content City</p>
+          <p>musabukhari20@gmail.com</p>
         </div>
       </div>
 

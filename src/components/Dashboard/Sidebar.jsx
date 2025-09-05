@@ -1,22 +1,21 @@
-import { motion } from "framer-motion";
-import { FaHome, FaChartBar, FaSave, FaFire, FaCogs } from "react-icons/fa";
+import { LayoutDashboard } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <motion.div
-      initial={{ x: -250 }}
-      animate={{ x: 0 }}
-      className="w-64 h-screen bg-[#1f2833] text-[#66fcf1] p-5 fixed"
-    >
-      <h1 className="text-2xl font-bold mb-10">Content Genius</h1>
-      <ul className="space-y-6 text-lg">
-        <li className="hover:text-white cursor-pointer flex items-center gap-2"><FaHome /> Dashboard</li>
-        <li className="hover:text-white cursor-pointer flex items-center gap-2"><FaFire /> Trending</li>
-        <li className="hover:text-white cursor-pointer flex items-center gap-2"><FaSave /> Saved Trends</li>
-        <li className="hover:text-white cursor-pointer flex items-center gap-2"><FaChartBar /> Analytics</li>
-        <li className="hover:text-white cursor-pointer flex items-center gap-2"><FaCogs /> Settings</li>
-      </ul>
-    </motion.div>
+    <div className="w-64 bg-[#0d1117] min-h-screen text-[#e5e7eb] p-6 shadow-lg border-r border-[#1e293b]">
+      <Link
+        to="/"
+        className="text-2xl font-bold bg-gradient-to-r from-[#AE67FA] to-[#F49867] bg-clip-text text-transparent"
+      >
+        Content Genius
+      </Link>
+      <nav className="flex flex-col gap-6 mt-10 text-[16px] font-medium">
+        <button className="flex items-center gap-3 hover:text-[#F49867] cursor-pointer transition">
+          <LayoutDashboard /> Dashboard
+        </button>
+      </nav>
+    </div>
   );
 };
 
