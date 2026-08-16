@@ -95,7 +95,7 @@ const Profile = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token && !user) {
-      fetch(`${API_BASE}/api/users/profile`, {
+      fetch(`${API_BASE}/api/users/me`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
