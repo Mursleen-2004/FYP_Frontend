@@ -42,7 +42,7 @@
   animation: moveStars 200s linear infinite;
 }
 .nebula {
-  background: url("/assets/backgrounds/nebula-overlay.png") no-repeat center
+  background: url("/assets/backgrounds/nebula-overlay.jpg") no-repeat center
     center;
   background-size: cover;
   position: absolute;

@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import pakistanFlag from "../assets/pakistan-flag.png";
 import copy from "../assets/copy.png";
 import twitter from "../assets/twitter.png";
+import { API_BASE } from "../utils/api";
 
 // Platform icons
 const platformIcons = {
@@ -111,7 +112,7 @@ const TrendingPage = () => {
       }
 
       try {
-        const { data } = await axios.get("http://localhost:4000/api/trends", {
+        const { data } = await axios.get(`${API_BASE}/api/trends`, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Cache-Control": "no-cache",

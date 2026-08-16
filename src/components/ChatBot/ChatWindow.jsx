@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { API_BASE } from "../../utils/api";
 
 export default function ChatWindow({ isOpen, onClose }) {
   const [messages, setMessages] = useState([]);
@@ -12,7 +13,7 @@ export default function ChatWindow({ isOpen, onClose }) {
     setMessages((prev) => [...prev, userMsg]);
 
     try {
-      const res = await axios.post("http://localhost:4000/api/chat", {
+      const res = await axios.post(`${API_BASE}/api/chat`, {
         question: input,
       });
 

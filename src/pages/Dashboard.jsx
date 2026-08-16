@@ -7,6 +7,7 @@ import { Sparkles, ListTree, ScrollText, Brain } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { API_BASE } from "../utils/api";
 
 const Dashboard = () => {
   const { currentUser: user, token } = useSelector((state) => state.user);
@@ -35,8 +36,8 @@ const Dashboard = () => {
         };
 
         const [postsRes, analyticsRes] = await Promise.all([
-          axios.get("http://localhost:4000/api/posts/my-posts", headers),
-          axios.get("http://localhost:4000/api/posts/analytics", headers),
+          axios.get(`${API_BASE}/api/posts/my-posts`, headers),
+          axios.get(`${API_BASE}/api/posts/analytics`, headers),
         ]);
 
         setPosts(postsRes.data);

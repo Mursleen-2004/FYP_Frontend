@@ -6,6 +6,7 @@ import { uploadToCloudinary } from "../utils/uploadToCloudinary";
 import toast from "react-hot-toast";
 import { ArrowLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { API_BASE } from "../utils/api";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -43,7 +44,7 @@ const Profile = () => {
       }
 
       const token = localStorage.getItem("token");
-      const response = await fetch("http://localhost:4000/api/users/update", {
+      const response = await fetch(`${API_BASE}/api/users/update`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -94,7 +95,7 @@ const Profile = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token && !user) {
-      fetch("http://localhost:4000/api/users/profile", {
+      fetch(`${API_BASE}/api/users/profile`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

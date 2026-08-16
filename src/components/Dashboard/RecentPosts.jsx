@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Trash2 } from "lucide-react";
 import { useSelector } from "react-redux";
+import { API_BASE } from "../../utils/api";
 
 const RecentPosts = ({ posts, onPostDeleted }) => {
   const { token } = useSelector((state) => state.user);
@@ -10,7 +11,7 @@ const RecentPosts = ({ posts, onPostDeleted }) => {
     if (!confirm) return;
 
     try {
-      await axios.delete(`http://localhost:4000/api/posts/${postId}`, {
+      await axios.delete(`${API_BASE}/api/posts/${postId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

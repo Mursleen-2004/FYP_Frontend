@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "../../redux/userSlice.js";
 import { Eye, EyeOff } from "lucide-react";
+import { API_BASE } from "../../utils/api";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -54,7 +55,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/auth/register",
+        `${API_BASE}/api/auth/register`,
         formData
       );
       const { user, token } = response.data;

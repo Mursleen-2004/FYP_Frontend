@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import ceo from "../assets/ceo.jpg";
+import ceo from "../assets/ceo.JPG";
 import Ai_engineer from "../assets/Ai_engineer.jpg";
-import DB_Admin from "../assets/DB_Admin.jpg";
+import DB_Admin from "../assets/DB_admin.jpg";
 
 const team = [
   {

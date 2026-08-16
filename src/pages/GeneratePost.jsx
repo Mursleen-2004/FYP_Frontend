@@ -7,6 +7,7 @@ import { ArrowLeft } from "lucide-react";
 import Typewriter from "typewriter-effect";
 import Tilt from "react-parallax-tilt";
 import { jsPDF } from "jspdf";
+import { API_BASE } from "../utils/api";
 
 const getFormattedDateTime = () => {
   const now = new Date();
@@ -51,7 +52,7 @@ const GeneratePost = () => {
     setPost("");
 
     try {
-      const response = await fetch("http://localhost:4000/api/ai/generate", {
+      const response = await fetch(`${API_BASE}/api/ai/generate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -73,7 +74,7 @@ const GeneratePost = () => {
 
   const handleSave = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/ai/generate", {
+      const response = await fetch(`${API_BASE}/api/ai/generate`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
